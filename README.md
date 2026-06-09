@@ -7,7 +7,7 @@ After that you need to setup the database. I used the MySQL Workbench.
 Make a new database with username - root, and password - root.
 
 Also if you want to use any other credentials, 
-please change it in code, in src/main/resources/applicationion.properties.
+please change it in code, in src/main/resources/application.properties.
 
 After that, make a two tables.
 ticket and user.
