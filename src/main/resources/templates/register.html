@@ -1,0 +1,21 @@
+<head>
+	<title>Register page</title>
+</head>
+
+<body>
+	<h2> Welcome to Ticketing Service system</h2>
+	<br>
+	<h3> Make an account</h3>
+	
+	<form method="post" action="/register" autocomplete="off">
+		<p> Username: </p> 
+		<input type="text" name="username" required>
+		<br>
+		<p> Password: </p>
+		<input type="text" name="password" required>
+		<br>
+		<br>
+		<button type="submit">Register</button>
+		<button onclick="location.href='/login'" type="button">Cancel</button>
+	</form>
+

@@ -1,0 +1,46 @@
+<head>
+	<title> Service Ticketing system </title>
+</head>
+
+<body>
+	<h2> Service Ticketing system </h2>
+	<h4> Welcome, [[${user}]]! </h4>
+	<button onclick="location.href='/ticketform'" type="button">Make a new ticket</button>
+	<button onclick="location.href='/logout'" type="button">Log Out</button>
+	<br>
+	<br>
+	<form method="post" action="/searchTicket" autocomplete="off">
+		<input type="text" name="title">
+		<button type="submit">Search ticket by title</button>
+	</form>
+	<hr>
+	
+	<h3> Ticket list </h3>
+
+	<table border="1">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Status</th>
+			<th>Created by</th>
+			<th>Created at</th>
+			<th></th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="ticket: ${listoftickets}">
+			<td th:text="${ticket.id}"></td>
+			<td th:text="${ticket.title}"></td>
+			<td th:text="${ticket.description}"></td>
+			<td th:text="${ticket.status}"></td>
+			<td th:text="${ticket.created_by}"></td>
+			<td th:text="${#temporals.format(ticket.created_at, 'yyyy-MM-dd HH:mm')}"></td>
+			<td><a th:href="@{/deleteTicket/{id}(id=${ticket.id})}">Delete</a></td>
+			<td><a th:href="@{/updateTicket/{id}(id=${ticket.id})}">Update</a></td>
+		</tr>
+	</tbody>
+	</table>
+</body>
